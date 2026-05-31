@@ -19,6 +19,27 @@ export default {
         "card-hover": "0 4px 12px rgba(0,0,0,.08), 0 12px 32px rgba(0,0,0,.12)",
         gold: "0 4px 24px rgba(184,137,42,.25)",
       },
+      animation: {
+        "ken-burns": "kenBurns 22s ease-out forwards",
+        "fade-up": "fadeUp 1s ease-out forwards",
+        "fade-up-delay": "fadeUp 1s ease-out 0.3s forwards",
+        "fade-up-delay2": "fadeUp 1s ease-out 0.6s forwards",
+        "scroll-hint": "scrollHint 2.2s ease-in-out infinite",
+      },
+      keyframes: {
+        kenBurns: {
+          "0%":   { transform: "scale(1) translateY(0)" },
+          "100%": { transform: "scale(1.10) translateY(-1%)" },
+        },
+        fadeUp: {
+          "0%":   { opacity: "0", transform: "translateY(18px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        scrollHint: {
+          "0%, 100%": { transform: "translateY(0)", opacity: "0.4" },
+          "50%":      { transform: "translateY(8px)", opacity: "0.9" },
+        },
+      },
     },
   },
   plugins: [],
