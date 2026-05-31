@@ -25,9 +25,9 @@ export default {
       },
       animation: {
         "ken-burns": "kenBurns 22s ease-out forwards",
-        "fade-up": "fadeUp 1s ease-out forwards",
-        "fade-up-delay": "fadeUp 1s ease-out 0.3s forwards",
-        "fade-up-delay2": "fadeUp 1s ease-out 0.6s forwards",
+        "fade-up": "fadeUp 1s ease-out both",
+        "fade-up-delay": "fadeUp 1s ease-out 0.3s both",
+        "fade-up-delay2": "fadeUp 1s ease-out 0.6s both",
         "scroll-hint": "scrollHint 2.2s ease-in-out infinite",
       },
       keyframes: {

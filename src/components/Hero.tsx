@@ -17,9 +17,7 @@ export default function Hero({ tr, lang }: Props) {
           alt="Machine de forage — eau jaillissante au Maroc"
           className="w-full h-full object-cover object-center animate-ken-burns"
         />
-        {/* Multi-layer overlay for depth and readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/75 via-navy/55 to-navy/80" />
-        <div className="absolute inset-0 bg-navy/25" />
+        <div className="absolute inset-0 bg-black/45" />
       </div>
 
       {/* Gold hairline top */}
@@ -41,7 +39,8 @@ export default function Hero({ tr, lang }: Props) {
         </p>
 
         {/* Main headline */}
-        <p className="text-xl sm:text-2xl md:text-3xl text-white/88 font-light leading-relaxed mb-6 opacity-0 animate-fade-up-delay">
+        <p className="text-xl sm:text-2xl md:text-3xl text-white font-light leading-relaxed mb-6 animate-fade-up-delay"
+          style={{ textShadow: "0 1px 12px rgba(0,0,0,0.6)" }}>
           {lang === "fr"
             ? <>Étude hydrogéologique &amp;<br className="hidden sm:block" /> recherche d'eau souterraine au Maroc</>
             : <>Hydrogeological study &amp;<br className="hidden sm:block" /> groundwater detection in Morocco</>
@@ -49,7 +48,7 @@ export default function Hero({ tr, lang }: Props) {
         </p>
 
         {/* Subtitle */}
-        <p className="text-white/45 text-sm sm:text-base max-w-xl mx-auto leading-relaxed opacity-0 animate-fade-up-delay2">
+        <p className="text-white/80 text-sm sm:text-base max-w-xl mx-auto leading-relaxed animate-fade-up-delay2">
           {tagline}
         </p>
       </div>

@@ -15,7 +15,7 @@ export default function WhoWeAre({ tr }: Props) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Photo */}
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 space-y-4">
             <div className="relative">
               <div className="absolute -inset-3 bg-gradient-to-br from-water/10 to-sand/20 rounded-2xl"/>
               <img
@@ -24,9 +24,12 @@ export default function WhoWeAre({ tr }: Props) {
                 className="relative w-full rounded-xl object-cover object-top shadow-lg"
                 style={{ aspectRatio: "4/3" }}
               />
-              <div className="absolute bottom-4 left-4 bg-petrol/90 backdrop-blur-sm rounded-lg px-4 py-2.5">
-                <p className="text-white font-semibold text-sm">{w.caption}</p>
-                <p className="text-white/55 text-xs">{w.captionSub}</p>
+            </div>
+            <div className="flex items-center gap-3 pl-1">
+              <div className="w-0.5 h-8 bg-water rounded-full flex-shrink-0"/>
+              <div>
+                <p className="font-semibold text-petrol text-sm">{w.caption}</p>
+                <p className="text-petrol/50 text-xs">{w.captionSub}</p>
               </div>
             </div>
           </div>
