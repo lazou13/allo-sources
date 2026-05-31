@@ -23,26 +23,17 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar tr={tr} lang={lang} setLang={setLang}/>
-      {/* 1 — Hero */}
       <Hero tr={tr} lang={lang}/>
-      {/* 2 — Qui sommes-nous */}
-      <WhoWeAre/>
-      {/* 3 — Méthodologie */}
+      <WhoWeAre tr={tr}/>
       <Method tr={tr}/>
-      {/* 4 — Rapport interactif */}
       <section id="rapport">
         <InteractiveReport tr={tr} whatsappNumber={WHATSAPP} phone={PHONE}/>
       </section>
-      {/* 5 — Carte interactive */}
       <MoroccoMap tr={tr}/>
-      {/* 6 — À propos */}
-      <About/>
-      {/* 7 — Références clients */}
+      <About tr={tr}/>
       <References tr={tr}/>
-      {/* 8 — Contact */}
-      <Contact/>
-      {/* 9 — Footer */}
-      <Footer/>
+      <Contact tr={tr}/>
+      <Footer tr={tr}/>
       <StickyButtons tr={tr} whatsappNumber={WHATSAPP} phone={PHONE}/>
     </div>
   );
