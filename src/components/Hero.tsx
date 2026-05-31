@@ -13,8 +13,8 @@ export default function Hero({ tr, lang }: Props) {
       {/* Background photo — Ken Burns slow zoom */}
       <div className="absolute inset-0 overflow-hidden">
         <img
-          src="/team-olivier-leo.jpg"
-          alt="Allo Sources — intervention terrain Maroc"
+          src="/forage-maroc.jpg"
+          alt="Machine de forage — eau jaillissante au Maroc"
           className="w-full h-full object-cover object-center animate-ken-burns"
         />
         {/* Multi-layer overlay for depth and readability */}

@@ -4,11 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy:  { DEFAULT: "#0a1628", 800: "#0f2040", 700: "#152b55", 600: "#1e3d7a", 500: "#2756a8", pale: "#e8eef8" },
-        gold:  { DEFAULT: "#b8892a", light: "#d4a843", pale: "#fdf6e7", dark: "#8a6520" },
-        sage:  { DEFAULT: "#2d6a3f", light: "#3d8f54", pale: "#e8f5ec" },
-        stone: { DEFAULT: "#f7f5f2", dark: "#ece8e2" },
-        ink:   "#1a1a2e",
+        navy:   { DEFAULT: "#0a1628", 800: "#0f2040", 700: "#152b55", 600: "#1e3d7a", 500: "#2756a8", pale: "#e8eef8" },
+        gold:   { DEFAULT: "#b8892a", light: "#d4a843", pale: "#fdf6e7", dark: "#8a6520" },
+        petrol: { DEFAULT: "#0d2b3e", 800: "#0a2030", 700: "#0f3550", 600: "#164e73", pale: "#e0ecf4" },
+        water:  { DEFAULT: "#1a7a9a", light: "#2a94b8", pale: "#e0f4f8", dark: "#0d5a72" },
+        sand:   { DEFAULT: "#c4a882", light: "#d8c4a0", pale: "#f7f1e8", dark: "#9e8464" },
+        sage:   { DEFAULT: "#2d6a3f", light: "#3d8f54", pale: "#e8f5ec" },
+        stone:  { DEFAULT: "#f7f5f2", dark: "#ece8e2" },
+        offwhite: "#faf8f4",
+        ink:    "#1a1a2e",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
