@@ -32,12 +32,12 @@ export default function InteractiveReport({ tr, whatsappNumber, phone }: Props) 
   const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(tr.cta.whatsappMsg)}`;
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-ocean-pale">
+    <section className="py-16 bg-gradient-to-b from-white to-navy-pale">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8">
           <h2 className="section-title">{r.title}</h2>
           <p className="section-subtitle">{r.subtitle}</p>
-          <p className="text-xs text-slate/50 mt-2 italic">{r.disclaimer}</p>
+          <p className="text-xs text-navy/40 mt-2 italic">{r.disclaimer}</p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
@@ -48,8 +48,8 @@ export default function InteractiveReport({ tr, whatsappNumber, phone }: Props) 
                 onClick={() => setTab(i)}
                 className={`flex-shrink-0 px-4 md:px-6 py-3.5 text-sm font-medium transition-colors border-b-2 ${
                   tab === i
-                    ? "border-ocean text-ocean bg-white"
-                    : "border-transparent text-slate/60 hover:text-slate"
+                    ? "border-gold text-navy bg-white"
+                    : "border-transparent text-navy/50 hover:text-navy"
                 }`}>
                 {tab_label}
               </button>
@@ -60,17 +60,17 @@ export default function InteractiveReport({ tr, whatsappNumber, phone }: Props) 
             {/* Tab 0 — Summary */}
             {tab === 0 && (
               <div className="space-y-6">
-                <h3 className="font-semibold text-ocean text-lg">{r.summary.title}</h3>
+                <h3 className="font-semibold text-navy text-lg">{r.summary.title}</h3>
                 <div className="grid md:grid-cols-2 gap-8 items-start">
                   <div>
-                    <p className="text-sm text-slate/60 mb-3">{r.summary.scoreLabel}</p>
+                    <p className="text-sm text-navy/55 mb-3">{r.summary.scoreLabel}</p>
                     <ScoreGauge score={82} />
                   </div>
                   <div className="space-y-2">
                     {r.summary.rows.map((row) => (
                       <div key={row.label} className="flex justify-between items-center py-2.5 border-b border-gray-50">
-                        <span className="text-sm text-slate/70">{row.label}</span>
-                        <span className="text-sm font-semibold text-ocean">{row.value}</span>
+                        <span className="text-sm text-navy/60">{row.label}</span>
+                        <span className="text-sm font-semibold text-navy">{row.value}</span>
                       </div>
                     ))}
                   </div>
@@ -81,13 +81,13 @@ export default function InteractiveReport({ tr, whatsappNumber, phone }: Props) 
             {/* Tab 1 — Map */}
             {tab === 1 && (
               <div className="space-y-5">
-                <h3 className="font-semibold text-ocean text-lg">{r.map.title}</h3>
+                <h3 className="font-semibold text-navy text-lg">{r.map.title}</h3>
                 {/* Fake satellite map */}
                 <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-[#4a7c59] via-[#6b9e78] to-[#8ab48f] h-56 md:h-72">
                   <div className="absolute inset-0 opacity-20"
                     style={{ backgroundImage: "repeating-linear-gradient(0deg,transparent,transparent 20px,rgba(0,0,0,.1) 20px,rgba(0,0,0,.1) 21px), repeating-linear-gradient(90deg,transparent,transparent 20px,rgba(0,0,0,.1) 20px,rgba(0,0,0,.1) 21px)" }}/>
                   {/* North indicator */}
-                  <div className="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-xs font-bold text-ocean shadow">N</div>
+                  <div className="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-xs font-bold text-navy shadow">N</div>
                   {/* Recommended point */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className="w-4 h-4 bg-red-500 rounded-full border-2 border-white shadow-lg animate-pulse"/>
@@ -100,18 +100,18 @@ export default function InteractiveReport({ tr, whatsappNumber, phone }: Props) 
                   {/* Legend */}
                   <div className="absolute bottom-3 left-3 bg-white/90 rounded-lg p-2.5 text-xs space-y-1">
                     <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-red-500 flex-shrink-0"/><span>Point recommandé</span></div>
-                    <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full border-2 border-ocean flex-shrink-0"/><span>Zone étudiée</span></div>
+                    <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full border-2 border-navy flex-shrink-0"/><span>Zone étudiée</span></div>
                   </div>
                   <p className="absolute bottom-3 right-3 text-white/60 text-xs italic">{r.map.note}</p>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="bg-ocean-pale rounded-xl p-4">
-                    <div className="flex items-center gap-2 mb-1"><MapPin className="w-4 h-4 text-ocean"/><span className="text-sm font-medium text-ocean">{r.map.coordLabel}</span></div>
-                    <p className="font-mono text-sm text-slate">{r.map.coords}</p>
+                  <div className="bg-navy-pale rounded-xl p-4">
+                    <div className="flex items-center gap-2 mb-1"><MapPin className="w-4 h-4 text-navy"/><span className="text-sm font-medium text-navy">{r.map.coordLabel}</span></div>
+                    <p className="font-mono text-sm text-navy/70">{r.map.coords}</p>
                   </div>
                   <div className="bg-sage-pale rounded-xl p-4">
                     <p className="text-sm font-medium text-sage mb-1">{r.map.zoneLabel}</p>
-                    <p className="text-sm text-slate">{r.map.zone}</p>
+                    <p className="text-sm text-navy/60">{r.map.zone}</p>
                   </div>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function InteractiveReport({ tr, whatsappNumber, phone }: Props) 
             {/* Tab 2 — Analysis */}
             {tab === 2 && (
               <div className="space-y-5">
-                <h3 className="font-semibold text-ocean text-lg">{r.analysis.title}</h3>
+                <h3 className="font-semibold text-navy text-lg">{r.analysis.title}</h3>
                 <div className="space-y-3">
                   {r.analysis.rows.map((row) => {
                     const score = parseFloat(row.note);
@@ -130,8 +130,8 @@ export default function InteractiveReport({ tr, whatsappNumber, phone }: Props) 
                     return (
                       <div key={row.label} className="space-y-1.5">
                         <div className="flex justify-between text-sm">
-                          <span className="text-slate">{row.label}</span>
-                          <span className="font-semibold text-ocean">{row.note}</span>
+                          <span className="text-navy/60">{row.label}</span>
+                          <span className="font-semibold text-navy">{row.note}</span>
                         </div>
                         <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                           <div className={`h-full rounded-full ${color} transition-all duration-700`} style={{ width: `${pct}%` }}/>
@@ -146,14 +146,14 @@ export default function InteractiveReport({ tr, whatsappNumber, phone }: Props) 
             {/* Tab 3 — Recommendations */}
             {tab === 3 && (
               <div className="space-y-5">
-                <h3 className="font-semibold text-ocean text-lg">{r.recommendations.title}</h3>
+                <h3 className="font-semibold text-navy text-lg">{r.recommendations.title}</h3>
                 <div className="space-y-3">
                   {r.recommendations.items.map((item) => (
-                    <div key={item.label} className="flex gap-4 p-4 rounded-xl bg-ocean-pale/50 border border-ocean/10">
+                    <div key={item.label} className="flex gap-4 p-4 rounded-xl bg-navy-pale/50 border border-navy/10">
                       <span className="text-xl flex-shrink-0">{item.icon}</span>
                       <div>
-                        <p className="text-sm font-semibold text-ocean">{item.label}</p>
-                        <p className="text-sm text-slate/70 mt-0.5">{item.value}</p>
+                        <p className="text-sm font-semibold text-navy">{item.label}</p>
+                        <p className="text-sm text-navy/55 mt-0.5">{item.value}</p>
                       </div>
                     </div>
                   ))}
@@ -164,29 +164,29 @@ export default function InteractiveReport({ tr, whatsappNumber, phone }: Props) 
             {/* Tab 4 — PDF Preview */}
             {tab === 4 && (
               <div className="space-y-6">
-                <h3 className="font-semibold text-ocean text-lg">{r.pdf.title}</h3>
+                <h3 className="font-semibold text-navy text-lg">{r.pdf.title}</h3>
                 <div className="grid sm:grid-cols-3 gap-4">
                   {r.pdf.pages.map((pg) => (
                     <div key={pg.num} className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow cursor-default">
-                      <div className="bg-gradient-to-br from-ocean-pale to-white h-36 flex flex-col items-center justify-center gap-2">
-                        <div className="w-10 h-10 rounded-full bg-ocean/10 flex items-center justify-center">
-                          <span className="font-bold text-ocean text-sm">{pg.num}</span>
+                      <div className="bg-gradient-to-br from-navy-pale to-white h-36 flex flex-col items-center justify-center gap-2">
+                        <div className="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center">
+                          <span className="font-bold text-navy text-sm">{pg.num}</span>
                         </div>
-                        <FileText className="w-8 h-8 text-ocean/40"/>
+                        <FileText className="w-8 h-8 text-navy/30"/>
                       </div>
                       <div className="p-3">
-                        <p className="font-semibold text-sm text-ocean">{pg.label}</p>
-                        <p className="text-xs text-slate/60 mt-0.5">{pg.desc}</p>
+                        <p className="font-semibold text-sm text-navy">{pg.label}</p>
+                        <p className="text-xs text-navy/50 mt-0.5">{pg.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
-                <p className="text-xs text-slate/40 italic text-center">{r.pdf.note}</p>
+                <p className="text-xs text-navy/35 italic text-center">{r.pdf.note}</p>
                 <div className="flex flex-wrap gap-3 justify-center">
-                  <button className="btn-secondary gap-2 text-sm">
+                  <button className="btn-outline gap-2 text-sm">
                     <Maximize2 className="w-4 h-4"/> {r.pdf.btnEnlarge}
                   </button>
-                  <button className="btn-secondary gap-2 text-sm">
+                  <button className="btn-outline gap-2 text-sm">
                     <Download className="w-4 h-4"/> {r.pdf.btnDownload}
                   </button>
                   <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(tr.cta.whatsappMsg)}`}
@@ -199,8 +199,8 @@ export default function InteractiveReport({ tr, whatsappNumber, phone }: Props) 
           </div>
 
           {/* Bottom CTA bar */}
-          <div className="bg-ocean-pale/50 border-t border-ocean/10 px-6 py-4 flex flex-wrap gap-3 items-center justify-between">
-            <p className="text-sm text-slate/70">Vous souhaitez une étude pour votre terrain ?</p>
+          <div className="bg-navy-pale/50 border-t border-navy/10 px-6 py-4 flex flex-wrap gap-3 items-center justify-between">
+            <p className="text-sm text-navy/60">Vous souhaitez une étude pour votre terrain ?</p>
             <div className="flex gap-2">
               <a href={`tel:${phone}`} className="btn-primary py-2 px-4 text-sm gap-1.5">
                 <Phone className="w-4 h-4"/> Appeler

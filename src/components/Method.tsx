@@ -3,29 +3,29 @@ import type { Translations } from "../i18n";
 export default function Method({ tr }: { tr: Translations }) {
   const m = tr.method;
   return (
-    <section className="py-16 bg-white" id="methode">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
-          <h2 className="section-title">{m.title}</h2>
-          <p className="section-subtitle">{m.subtitle}</p>
+    <section className="py-20 bg-white" id="methode">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-14">
+          <p className="section-label mb-3">Processus</p>
+          <h2 className="section-title mb-4">{m.title}</h2>
+          <p className="text-navy/60">{m.subtitle}</p>
         </div>
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-ocean/20 via-ocean to-ocean/20 hidden md:block"/>
-          <div className="space-y-6">
-            {m.steps.map((step) => (
-              <div key={step.num} className="flex gap-5 items-start group">
-                {/* Number circle */}
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-ocean text-white flex items-center justify-center font-bold text-sm shadow-lg z-10 group-hover:bg-ocean-light transition-colors">
+
+        <div className="space-y-4">
+          {m.steps.map((step, i) => (
+            <div key={step.num} className="flex gap-5 items-start group">
+              <div className="flex-shrink-0 flex flex-col items-center">
+                <div className="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center font-bold text-sm shadow-md group-hover:bg-gold transition-colors">
                   {step.num}
                 </div>
-                <div className="card flex-1 group-hover:border-ocean/30 transition-colors">
-                  <h3 className="font-semibold text-ocean mb-1">{step.title}</h3>
-                  <p className="text-sm text-slate/70">{step.desc}</p>
-                </div>
+                {i < m.steps.length - 1 && <div className="w-0.5 h-6 bg-navy/10 mt-1"/>}
               </div>
-            ))}
-          </div>
+              <div className="card-premium flex-1 p-5 group-hover:border-navy/20 transition-colors">
+                <h3 className="font-semibold text-navy mb-1">{step.title}</h3>
+                <p className="text-sm text-navy/55 leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

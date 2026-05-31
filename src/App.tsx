@@ -11,34 +11,36 @@ import References from "./components/References";
 import Method from "./components/Method";
 import Gallery from "./components/Gallery";
 import Disclaimer from "./components/Disclaimer";
+import FAQ from "./components/FAQ";
 import CTAFinal from "./components/CTAFinal";
 import StickyButtons from "./components/StickyButtons";
 import Footer from "./components/Footer";
+
+const PHONE = "+212662093629";
+const WHATSAPP = "212662093629";
 
 export default function App() {
   const [lang, setLang] = useState<Lang>("fr");
   const tr = t[lang];
 
-  const phone = "+212662093629";
-  const whatsappNumber = "212662093629";
-
   return (
     <div className="min-h-screen bg-white">
-      <Navbar tr={tr} lang={lang} setLang={setLang} />
-      <Hero tr={tr} whatsappNumber={whatsappNumber} phone={phone} />
-      <Problem tr={tr} />
-      <Services tr={tr} />
+      <Navbar tr={tr} lang={lang} setLang={setLang}/>
+      <Hero tr={tr} whatsappNumber={WHATSAPP} phone={PHONE} lang={lang}/>
+      <Problem tr={tr}/>
+      <Services tr={tr}/>
       <section id="rapport">
-        <InteractiveReport tr={tr} whatsappNumber={whatsappNumber} phone={phone} />
+        <InteractiveReport tr={tr} whatsappNumber={WHATSAPP} phone={PHONE}/>
       </section>
-      <MoroccoMap tr={tr} />
-      <References tr={tr} />
-      <Method tr={tr} />
-      <Gallery tr={tr} />
-      <Disclaimer tr={tr} />
-      <CTAFinal tr={tr} whatsappNumber={whatsappNumber} phone={phone} />
-      <Footer tr={tr} />
-      <StickyButtons tr={tr} whatsappNumber={whatsappNumber} phone={phone} />
+      <MoroccoMap tr={tr}/>
+      <References tr={tr}/>
+      <Method tr={tr}/>
+      <Gallery tr={tr}/>
+      <FAQ tr={tr} lang={lang}/>
+      <Disclaimer tr={tr}/>
+      <CTAFinal tr={tr} whatsappNumber={WHATSAPP} phone={PHONE}/>
+      <Footer tr={tr}/>
+      <StickyButtons tr={tr} whatsappNumber={WHATSAPP} phone={PHONE}/>
     </div>
   );
 }
