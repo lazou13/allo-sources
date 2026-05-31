@@ -230,9 +230,9 @@ export const t = {
       legalNote: "Les données présentées sont des estimations issues de l'étude terrain. Elles permettent de réduire les risques avant forage, sans constituer une garantie absolue de résultat.",
     },
     gallery: {
-      title: "Interventions terrain",
-      subtitle: "Photos et vidéos à venir — médias en cours de collecte.",
-      placeholder: "Médias à ajouter prochainement",
+      title: "Nos interventions terrain",
+      subtitle: "Bassins d'irrigation, forages, puits et jardins — aperçu de nos missions à travers le Maroc.",
+      placeholder: "",
     },
     cta: {
       title: "Vous avez un terrain à analyser ?",
@@ -456,9 +456,9 @@ export const t = {
       legalNote: "The data presented are estimates derived from field study. They help reduce risks before drilling, without constituting an absolute guarantee of results.",
     },
     gallery: {
-      title: "Field interventions",
-      subtitle: "Photos and videos coming soon — media being collected.",
-      placeholder: "Media to be added shortly",
+      title: "Our field interventions",
+      subtitle: "Irrigation basins, boreholes, wells and gardens — highlights from our missions across Morocco.",
+      placeholder: "",
     },
     cta: {
       title: "Do you have land to analyse?",

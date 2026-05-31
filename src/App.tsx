@@ -10,6 +10,7 @@ import MoroccoMap from "./components/MoroccoMap";
 import About from "./components/About";
 import References from "./components/References";
 import Contact from "./components/Contact";
+import Gallery from "./components/Gallery";
 import StickyButtons from "./components/StickyButtons";
 import Footer from "./components/Footer";
 
@@ -31,6 +32,7 @@ export default function App() {
       </section>
       <MoroccoMap tr={tr}/>
       <About tr={tr}/>
+      <Gallery tr={tr} lang={lang}/>
       <References tr={tr}/>
       <Contact tr={tr}/>
       <Footer tr={tr}/>
