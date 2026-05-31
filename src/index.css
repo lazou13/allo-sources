@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply text-slate bg-white; font-family: 'Inter', system-ui, sans-serif; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-ocean transition-all duration-200 hover:bg-ocean-light active:scale-95 shadow-lg;
+  }
+  .btn-whatsapp {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-[#25D366] transition-all duration-200 hover:bg-[#1ebe5a] active:scale-95 shadow-lg;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-ocean bg-white border-2 border-ocean transition-all duration-200 hover:bg-ocean-pale active:scale-95;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-bold text-ocean leading-tight;
+  }
+  .section-subtitle {
+    @apply text-lg text-slate/70 mt-3;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 0.6s ease both; }
+
+/* Sticky buttons */
+.sticky-cta { position: fixed; bottom: 1rem; right: 1rem; z-index: 50; display: flex; flex-direction: column; gap: 0.5rem; }
